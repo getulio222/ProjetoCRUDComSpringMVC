@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  th:href="@{/css/materialize.min.css}" media="screen,projection" />
+<title>Lista de Usuário</title>
+</head>
+<body>
+	<div>
+		<div align="center">
+			<h3>Lista de Usuários</h3>			
+			<a href="/cadastros" class="waves-effect waves-light btn">Adicionar novo Usuário</a><br/>			
+		</div>
+		<br></br>
+		<form class="container">
+			<table class="highlight">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>E-mail</th>
+						<th>Dígito Único</th>
+						<th>Resultado</th>
+						<th>Opções</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuario : ${listUsuario}">
+						<td th:text="${usuario.id}">id</td>
+						<td th:text="${usuario.nome}">nome</td>
+						<td th:text="${usuario.email}">email</td>
+						<td th:text="${usuario.digitoUnico}">digitoUnico</td>
+						<td th:text="${usuario.resultado}">resultado</td>
+						
+						<td><a th:href="@{'/editar/' + ${usuario.id}}">Editar</a>
+							&nbsp;&nbsp;&nbsp; 
+							<a th:href="@{'/excluir/' + ${usuario.id}}">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../materialize/js/materialize.min.js" th:src="@{/js/materialize.min.js}"></script>
+</body>
+</html>

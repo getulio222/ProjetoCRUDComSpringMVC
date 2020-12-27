@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  th:href="@{/css/materialize.min.css}" media="screen,projection" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Cadastro</title>
+</head>
+<body>
+	<div align="center">
+		<h3>Novo Usuário</h3>
+		<br></br>
+	</div>
+	<div>
+		<form action="#" th:action="@{/salvar}" th:object="${usuario}"	method="post" class="container">
+			<div class="row">
+			
+			 <div class="input-field col s6">
+         		 <i class="material-icons prefix">account_circle</i>
+          		<input id="icon_prefix" type="text" class="validate" th:field="*{nome}" >
+          		<label for="icon_prefix">Nome</label>
+       		 </div>
+       		 
+       		 <div class="input-field col s6">
+         		 <i class="material-icons prefix">email</i>
+          		<input id="icon_prefix" type="text" class="validate" th:field="*{email}" >
+          		<label for="icon_prefix">Email</label>
+       		 </div>
+       		 
+       		  <div class="input-field col s6">
+         		 <i class="material-icons prefix">filter_9_plus</i>
+          		<input placeholder="Resulta na soma de cada dígito" id="icon_prefix"  type="text" class="validate" th:field="*{digitoUnico}" >
+          		<label for="icon_prefix">Dígito Único</label>
+       		 </div>				
+				<br></br>
+				<div class="input-field col offset-s4 s4">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Salvar</button>
+				</div>
+				
+			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../materialize/js/materialize.min.js" th:src="@{/js/materialize.min.js}"></script>
+</body>
+</html>

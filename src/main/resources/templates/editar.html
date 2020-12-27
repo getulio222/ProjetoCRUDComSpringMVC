@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  th:href="@{/css/materialize.min.css}" media="screen,projection" />
+<title>Editar Usuário</title>
+</head>
+<body>
+	<div align="center">
+		<h3>Editar Usuário</h3>
+		<br></br>
+	</div>
+	<div>
+		<form action="#" th:action="@{/salvar}" th:object="${usuario}" method="post" class="container">
+			<div class="row">
+				
+				ID: <input type="text" th:field="*{id}" readonly="readonly"/>
+				Nome: <input placeholder="Nome" type="text" th:field="*{nome}" />				 
+				E-mail:<input placeholder="E-mail" type="text" th:field="*{email}" />				
+				Dígito Único: <input placeholder="Resulta na soma de cada dígito" type="text" th:field="*{digitoUnico}"  />
+			    <br></br>
+				<div align="center">
+					<button class="btn waves-effect waves-light" type="submit"
+						name="action">Salvar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../materialize/js/materialize.min.js" th:src="@{/js/materialize.min.js}"></script>
+</body>
+</html>
