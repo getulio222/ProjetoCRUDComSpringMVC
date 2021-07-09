@@ -22,6 +22,10 @@ public class UsuarioService {
 	}
 
 	public void saveUser(Usuario usuario) {
+		if (usuario.getResultado() == null) {
+
+			usuario.aplicaResultado();
+		}
 		repo.save(usuario);
 	}
 
